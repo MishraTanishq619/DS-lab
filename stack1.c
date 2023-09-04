@@ -13,14 +13,15 @@ void push();
 void pop();
 void val();
 void show();
-
+void find();
 
 int main()
+
 {
     // struct stack stk;
     int choice;
 
-    printf("\n\nChoose from the below :\n\t\t1.Push\n\t\t2.Pop\n\t\t3.Value\n\t\t4.Show\t\t5.Exit\n\t:");
+    printf("\n\nChoose from the below :\n\t\t1.Push\n\t\t2.Pop\n\t\t3.Value\n\t\t4.Show\n\t\t5.Find N\t\t6.Exit\n\t:");
     scanf("%d",&choice);
     printf("\n\n");
 
@@ -43,7 +44,13 @@ int main()
         show();
         main();
     
+    
     case 5:
+        find();
+        main();
+    
+    case 6:
+        exit(0);
         return 0;
 
     default:
@@ -91,3 +98,33 @@ void show(){
     }
 }
 
+
+
+
+void find(){
+    int x;
+    int b=0;
+
+    printf("Type Number to find : ");
+    scanf("%d",&x);
+
+
+    for (int i = 0; i <=stk.p; i++)
+    {
+        if(stk.arr[i]==x) {
+            b=1;
+            break;
+        }
+    }
+
+    if (b==0)
+    {
+        printf("Didn't Found.");
+    }
+    else
+    {
+        printf("Found it.");
+    }
+    
+    
+}

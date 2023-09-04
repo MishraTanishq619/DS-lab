@@ -1,4 +1,2 @@
 
-// void pop();
-// void val();
-// void show();
+struct queue q;
