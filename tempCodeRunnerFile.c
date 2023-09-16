@@ -1,2 +1,2 @@
 
-struct queue q;
+    // h = NULL;
