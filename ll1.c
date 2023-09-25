@@ -10,12 +10,20 @@ struct slink
 
 struct slink *h = NULL;
 
-void insert_at_end(int x);
+//1
 void insert_at_front(int x);
-void display();
-void delete(int x);
+//2
+void insert_at_end(int x);
+//3
 void insert_at(int n, int x);
+//4
 void find(int x);
+//5
+void display();
+//6
+void delete(int x);
+//7
+void length();
 
 void main()
 {
@@ -23,18 +31,97 @@ void main()
     // struct slink *h;
     // h = NULL;
 
-    insert_at_end(12);
-    insert_at_end(32);
-    insert_at_front(43);
-    insert_at_end(53);
-    insert_at_end(23);
+//
+    // insert_at_end(12);
+    // insert_at_end(32);
+    // insert_at_front(43);
+    // insert_at_end(53);
+    // insert_at_end(23);
 
-    display();
+    // display();
 
-    delete (3);
-    insert_at(2, 50);
-    display();
-    find(43);
+    // delete (3);
+    // insert_at(2, 50);
+    // display();
+    // find(43);
+    //
+
+    printf("\n\n\t\t########## This is implementation of Singly Linked list.##########\n\nChoose from the Below :\n\n \n\t\t0. Exit\n\t\t1. Insert at Front \n\t\t2. Insert At End. \n\t\t3. Insert at p \n\t\t4. Find n \n\t\t5. Display List \n\t\t6. Delete n \n\t\t7. Length of List\n\t\t\t Choice : ");
+    int choice;
+    scanf("%d",&choice);
+
+    // printf("\n%d", choice);
+    int p;
+    int x;
+    switch (choice)
+    {
+    case 1:
+        printf("\n\n\t\tType Number to be inserted : ");
+        scanf("%d", &x);
+        insert_at_front(x);
+        main();
+        break;
+
+    case 2:
+        printf("\n\n\t\tType Number to be inserted : ");
+        scanf("%d", &x);
+        insert_at_end(x);
+        main();
+        break;
+
+        
+    case 3:
+        printf("\n\n\t\tType Where to be inserted : ");
+        scanf("%d", &p);
+        printf("\n\n\t\tType Number to be inserted : ");
+        scanf("%d", &x);
+        insert_at(p,x);
+        main();
+        break;
+
+        
+    case 4:
+        printf("\n\n\t\tType Number to be Searched : ");
+        scanf("%d", &x);
+        find(x);
+        main();
+        break;
+
+    case 5:
+        printf("\n");
+        display();
+        printf("\n");
+        main();
+        break;
+
+        
+    case 6:
+        printf("\n\n\t\tType Number to be Deleted : ");
+        scanf("%d", &x);
+        delete(x);
+        printf("\n");
+        main();
+        break;
+
+
+    case 7:
+        printf("\n");
+        length();
+        printf("\n");
+        main();
+        break;
+
+    case 0:
+        printf("\n\n\t\tExiting..........");
+        printf("\n");
+        exit(0);
+        break;
+
+
+    default:
+        printf("Wrongly typed........\n\n");
+        break;
+    }
 }
 
 void insert_at_end(int x)
@@ -167,4 +254,19 @@ void insert_at(int p, int x)
     {
         printf("Underflow rank of %d.\n", p);
     }
+}
+
+
+void length(){
+    int l=0;
+    struct slink *m;
+
+    m = h;
+
+    while(m!=NULL){
+        l++;
+        m = m->add;
+    }
+
+    printf("Number of nodes in This List is : %d",l);
 }
