@@ -1,9 +1,2 @@
-ice)
-    // {
-    // case 1:
-    //     /* code */
-    //     break;
-    
-    // default:
-    //     break;
-    // }
+oid insert_at_last();
+v
